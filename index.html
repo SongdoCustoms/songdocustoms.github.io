@@ -1,51 +1,100 @@
-</html>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Link Page</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k6Tf1tY1/E3ZyTJa/b7tuIRUtH5TwN5F3VZc9dJ+M1nP+5vlI8pU/4BO1apJIk+ABP1s6Jp7JOk4Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        /* Deep Blue Gradient Background */
-        .ocean-bg {
-            background: linear-gradient(to right, #00416A, #E4E5E6);
-            background-size: 200% 200%;
-            animation: gradientAnimation 15s ease infinite;
-        }
-
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-    </style>
+    <title>송도관세사</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="ocean-bg flex items-center justify-center min-h-screen">
-    <div class="bg-white p-6 rounded-lg shadow-lg w-80 text-center">
-        <!-- Profile Image -->
-        <img class="w-24 h-24 rounded-full mx-auto mb-2" src="your-profile-image-url.jpg" alt="Profile Image">
-        
-        <!-- Nickname -->
-        <h2 class="text-xl font-semibold mb-4">Your Nickname</h2>
-        
-        <!-- Link Buttons -->
-        <div class="space-y-4">
-            <a href="https://example.com" 
-               class="flex items-center justify-center bg-blue-500 text-white py-4 px-4 rounded-full shadow-lg hover:bg-blue-600 transition duration-200 transform hover:scale-105 active:translate-y-1">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256"><path fill="#1877F2" d="M256 128C256 57.308 198.692 0 128 0S0 57.308 0 128c0 63.888 46.808 116.843 108 126.445V165H75.5v-37H108V99.8c0-32.08 19.11-49.8 48.348-49.8C170.352 50 185 52.5 185 52.5V84h-16.14C152.959 84 148 93.867 148 103.99V128h35.5l-5.675 37H148v89.445c61.192-9.602 108-62.556 108-126.445"/><path fill="#FFF" d="m177.825 165l5.675-37H148v-24.01C148 93.866 152.959 84 168.86 84H185V52.5S170.352 50 156.347 50C127.11 50 108 67.72 108 99.8V128H75.5v37H108v89.445A129 129 0 0 0 128 256a129 129 0 0 0 20-1.555V165z"/></svg>
-               <i class="fab fa-facebook-f mr-2"></i> Link 1
-            </a>
-            <a href="https://example.com" 
-               class="flex items-center justify-center bg-blue-500 text-white py-4 px-4 rounded-full shadow-lg hover:bg-blue-600 transition duration-200 transform hover:scale-105 active:translate-y-1">
-               <i class="fab fa-twitter mr-2"></i> Link 2
-            </a>
-            <a href="https://example.com" 
-               class="flex items-center justify-center bg-blue-500 text-white py-4 px-4 rounded-full shadow-lg hover:bg-blue-600 transition duration-200 transform hover:scale-105 active:translate-y-1">
-               <i class="fab fa-instagram mr-2"></i> Link 3
-            </a>
+<body>
+
+    <!-- 공통 헤더 -->
+    <header>
+        <div class="container">
+            <h1>송도관세사 입니다.</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="Services.html">Services</a></li> <!-- 링크 수정 -->
+                    <li><a href="#contact" class="contact-button">CONTACT</a></li>
+                </ul>
+            </nav>
         </div>
-    </div>
+    </header>
+
+    <section id="home">
+        <div class="overlay"></div>
+        <div class="container">
+            <!-- 수정된 부분 시작 -->
+            <div class="home-text">
+                <h2>송도관세사</h2>
+                <p>귀사의 무역관련 문제에 대한 완벽한 솔루션을 제공합니다.</p>
+            </div>
+            <!-- 수정된 부분 끝 -->
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>송도관세사를 소개합니다</h2>
+            <p>송도관세사 대표 차상두는 다년간의 경험과 전문성을 바탕으로, 무역 및 통관 관련 문제를 효과적으로 해결하는 관세사입니다.</p>
+            <p>저희는 고객의 요구를 깊이 이해하고, 최적의 해결책을 제시하며, 정확하고 신속한 서비스를 제공합니다.</p>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>송도관세사의 전문 서비스</h2>
+            <ul>
+                <li>세관 심사 및 불복 대행 관세심사</li>
+                <li>통관적법성</li>
+                <li>수출입 통관대행</li>
+                <li>관세 및 통관특례</li>
+                <li>관세환급 및 외환거래법</li>
+                <li>해외직구 통관컨설팅</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container contact-container">
+            <div class="contact-form">
+                <h2>전문가와 상담해보세요</h2>
+                <p>무역과 관련한 문제를 해결하기 위한 상담을 원하시면 연락 주세요.</p>
+                <form>
+                    <label for="name">성명 *</label><br>
+                    <input type="text" id="name" name="name" required><br>
+
+                    <label for="email">Email 주소 *</label><br>
+                    <input type="email" id="email" name="email" required><br>
+
+                    <label for="phone">휴대폰 번호 *</label><br>
+                    <input type="tel" id="phone" name="phone" required><br>
+
+                    <label for="message">남기실 말씀</label><br>
+                    <textarea id="message" name="message"></textarea><br>
+
+                    <label><input type="checkbox" required> 본인은 상기 자료가 이사이트에 저장을 허용합니다. *</label><br>
+
+                    <input type="submit" value="제출하기">
+                </form>
+            </div>
+            <div class="contact-map">
+                <h3>문의하기</h3>
+                <p>전화: 010-9198-8194</p>
+                <p>Email: holyspirit.cha@gmail.com</p>
+                <h3>Location</h3>
+                <p>중구 신흥동3가 75, 인천광역시</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.891702763208!2d126.6114532156323!3d37.46770803606996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b797f0e90e611%3A0x4966c7d2b1c2f8cd!2z7J247ZSM7JuQ7Iuc64-ZIO2DgOq4sOq1rCDrjIDrsoTsmqntmZjsp4AgNzXsnZjspp3soJzsoIQ!5e0!3m2!1sko!2skr!4v1692031658488!5m2!1sko!2skr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 송도관세사. 모든 권리 보유.</p>
+        </div>
+    </footer>
 </body>
 </html>
