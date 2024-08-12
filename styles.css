@@ -48,6 +48,7 @@ nav ul li .contact-button {
 }
 
 /* 홈 섹션 스타일 */
+/* 홈 섹션 스타일 */
 #home {
     background-image: url('homepage.png'); /* 홈 섹션의 배경 이미지 설정 */
     background-color: #e0f7fa; /* 배경색을 밝게 설정 */
@@ -60,6 +61,7 @@ nav ul li .contact-button {
     text-align: left; /* 텍스트를 왼쪽으로 정렬 */
     color: #fff; /* 텍스트 색상을 흰색으로 설정 */
 }
+
 
 #home .overlay {
     display: none; /* 홈 섹션의 오버레이를 비활성화 */
