@@ -1,287 +1,96 @@
+/* 기본 바디 스타일 */
 body {
-    font-family: Arial, sans-serif; /* 웹페이지 전체의 폰트 설정 */
-    margin: 0; /* 웹페이지의 기본 여백 제거 */
-    padding: 0; /* 웹페이지의 기본 패딩 제거 */
-    line-height: 1.6; /* 텍스트 줄 간격 설정 */
-    background-color: #f4f4f4; /* 웹페이지 배경색 설정 */
-    color: #333; /* 텍스트 기본 색상 설정 */
+    font-family: Arial, sans-serif; /* 웹페이지 기본 폰트 */
+    margin: 0; /* 기본 여백 제거 */
+    padding: 0; /* 기본 패딩 제거 */
+    line-height: 1.6; /* 텍스트 줄 간격 */
+    background-color: #f4f4f4; /* 배경색 설정 */
+    color: #333; /* 텍스트 색상 */
 }
 
+/* 헤더 스타일 */
 header {
-    background-color: #002d26; /* 헤더 배경색 설정 */
-    padding: 20px 0; /* 헤더 상하단 패딩 설정 */
+    background-color: #002d26; /* 헤더 배경색 */
+    padding: 20px 0; /* 상하단 패딩 */
+    position: fixed; /* 헤더를 상단에 고정 */
+    width: 100%; /* 헤더 너비 100% */
+    top: 0; /* 화면 상단에 위치 */
+    z-index: 1000; /* 다른 요소보다 위에 위치 */
 }
 
+/* 컨테이너 스타일: 중앙 정렬 및 최대 너비 설정 */
 .container {
-    width: 80%; /* 페이지 컨텐츠의 최대 너비 설정 */
-    margin: 0 auto; /* 컨텐츠를 화면 가운데로 정렬 */
+    width: 95%; /* 최대 너비 설정 */
+    margin: 0 auto; /* 중앙 정렬 */
 }
 
+/* 헤더 내 제목 스타일 */
 header h1 {
-    margin: 0; /* 헤더 제목의 기본 여백 제거 */
-    text-align: left; /* 헤더 제목을 왼쪽 정렬 */
-    font-size: 24px; /* 헤더 제목의 폰트 크기 설정 */
+    margin: 0; /* 기본 여백 제거 */
+    text-align: left; /* 왼쪽 정렬 */
+    font-size: 24px; /* 폰트 크기 */
+    color: #fff; /* 텍스트 색상 흰색 */
 }
 
+/* 네비게이션 스타일 */
 nav ul {
-    list-style-type: none; /* 네비게이션 리스트의 기본 불릿 제거 */
-    margin: 0; /* 네비게이션 리스트의 기본 여백 제거 */
-    padding: 0; /* 네비게이션 리스트의 기본 패딩 제거 */
-    text-align: right; /* 네비게이션 리스트를 오른쪽 정렬 */
+    list-style-type: none; /* 기본 리스트 스타일 제거 */
+    margin: 0; /* 기본 여백 제거 */
+    padding: 0; /* 기본 패딩 제거 */
+    text-align: right; /* 오른쪽 정렬 */
 }
 
 nav ul li {
-    display: inline; /* 네비게이션 리스트 항목을 가로로 배치 */
+    display: inline-block; /* 가로로 나열하며 블록 요소처럼 동작 */
     margin: 0 15px; /* 리스트 항목 간 간격 설정 */
 }
 
 nav ul li a {
-    color: #fff; /* 네비게이션 링크 텍스트 색상 설정 */
-    text-decoration: none; /* 링크의 밑줄 제거 */
-    font-weight: bold; /* 링크 텍스트의 굵기 설정 */
+    display: block; /* 링크를 블록 요소로 설정하여 박스 전체에 적용 */
+    color: #fff; /* 텍스트 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+    font-weight: bold; /* 텍스트 굵기 */
+    padding: 10px 15px; /* 링크 패딩 */
+    background-color: #004d40; /* 배경색 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    width: 120px; /* 모든 링크의 너비를 일정하게 설정 */
+    text-align: center; /* 텍스트를 중앙 정렬 */
+    transition: background-color 0.3s; /* 배경색 전환 애니메이션 */
 }
 
-nav ul li .contact-button {
-    border: 2px solid #fff; /* 링크의 외곽선 설정 */
-    padding: 5px 10px; /* 링크의 패딩 설정 */
-    border-radius: 5px; /* 외곽선의 모서리를 둥글게 설정 */
+nav ul li a:hover {
+    background-color: #00796b; /* 호버 시 배경색 변경 */
 }
 
-/* 홈 섹션 스타일 */
+/* 섹션 스타일 */
+section {
+    padding: 100px 0; /* 상하단 패딩 */
+    margin-top: 60px; /* 헤더와 겹치지 않도록 상단 여백 */
+}
+
 /* 홈 섹션 스타일 */
 #home {
-    background-image: url('homepage.png'); /* 홈 섹션의 배경 이미지 설정 */
-    background-color: #e0f7fa; /* 배경색을 밝게 설정 */
-    height: 100vh; /* 섹션의 높이를 뷰포트 높이와 같게 설정 */
-    position: relative; /* 자식 요소의 상대 위치 설정 */
-    display: flex; /* 플렉스 박스 모델 사용 */
-    align-items: flex-start; /* 플렉스 아이템을 상단에 정렬 */
-    justify-content: flex-start; /* 플렉스 아이템을 왼쪽에 정렬 */
-    padding: 50px; /* 섹션의 상단과 좌측에 패딩 추가 */
-    text-align: left; /* 텍스트를 왼쪽으로 정렬 */
-    color: #fff; /* 텍스트 색상을 흰색으로 설정 */
+    background-image: url('https://songdocustoms.github.io/homepage.png'); /* 배경 이미지 */
+    background-color: #e0f7fa; /* 배경색 */
+    height: 100vh; /* 섹션 높이를 뷰포트 높이에 맞춤 */
+    position: relative; /* 자식 요소의 상대적 위치 */
+    display: flex; /* 플렉스 박스 사용 */
+    align-items: left; /* 수직 중앙 정렬 */
+    justify-content: left; /* 수평 중앙 정렬 */
+    text-align: left; /* 텍스트 중앙 정렬 */
+    color: #fff; /* 텍스트 색상 흰색 */
 }
 
-
-#home .overlay {
-    display: none; /* 홈 섹션의 오버레이를 비활성화 */
+/* 홈 섹션 내 제목 스타일 */
+#home h2 {
+    font-size: 48px; /* 폰트 크기 */
+    margin-bottom: 10px; /* 하단 여백 */
+    z-index: 2; /* 레이어 순서 */
+    color: #fff; /* 텍스트 색상 */
 }
 
 /* 홈 섹션 내 텍스트 스타일 */
-.home-text {
-    max-width: 600px; /* 텍스트 블록의 최대 너비 설정 */
-}
-
-#home h2 {
-    justify-content: flex-start; /* 텍스트를 왼쪽에 배치 */
-    left: 10px; /* 텍스트의 왼쪽 위치 설정 */
-    font-size: 48px; /* 텍스트의 폰트 크기 설정 */
-    text-align: left; /* 텍스트 정렬을 왼쪽으로 설정 */
-    margin-bottom: 10px; /* 하단 여백 조정 */
-    z-index: 2; /* 레이어 순서 설정 */
-    color: #fff; /* 텍스트 색상을 흰색으로 설정 */
-}
-
 #home p {
-    font-size: 22px; /* 텍스트의 폰트 크기 설정 */
-    z-index: 2; /* 레이어 순서 설정 */
-}
-
-/* 서비스 페이지 스타일링 */
-.services-container {
-    display: grid; /* 그리드 레이아웃 사용 */
-    grid-template-columns: repeat(3, 1fr); /* 3개의 컬럼으로 그리드 설정 */
-    gap: 15px; /* 그리드 아이템 간 간격 줄임 */
-    margin-top: 20px; /* 상단 여백 설정 */
-}
-
-.service-card {
-    background-color: #fff; /* 서비스 카드의 배경색 설정 */
-    border: 1px solid #ddd; /* 외곽선 설정 */
-    border-radius: 8px; /* 모서리를 둥글게 설정 */
-    padding: 15px; /* 카드 내부 패딩 설정 */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
-    transition: transform 0.3s ease; /* 호버 시 부드러운 애니메이션 설정 */
-    min-height: 220px; /* 카드의 최소 높이 설정 */
-}
-
-.service-card:hover {
-    transform: translateY(-5px); /* 호버 시 카드가 위로 올라가는 효과 */
-}
-
-.service-card h3 {
-    margin-top: 0; /* 제목의 상단 여백 제거 */
-    color: #002d26; /* 제목의 텍스트 색상 설정 */
-    font-size: 22px; /* 제목의 폰트 크기 설정 */
-}
-
-.service-card p {
-    font-size: 15px; /* 텍스트의 폰트 크기 설정 */
-    line-height: 1.4; /* 텍스트 줄 간격 설정 */
-    color: #333; /* 텍스트 색상 설정 */
-}
-
-/* 반응형 디자인 - 화면이 작아질 때 두 개씩 또는 한 개씩 배치 */
-@media (max-width: 1200px) {
-    .services-container {
-        grid-template-columns: repeat(2, 1fr); /* 두 개의 컬럼으로 그리드 설정 */
-    }
-}
-
-@media (max-width: 768px) {
-    .services-container {
-        grid-template-columns: 1fr; /* 한 개의 컬럼으로 그리드 설정 */
-    }
-}
-
-/* 연락처 페이지 스타일 시작 */
-.contact-container {
-    display: flex; /* 플렉스 박스 모델 사용 */
-    flex-direction: row; /* 플렉스 아이템을 가로로 배치 */
-    justify-content: space-between; /* 아이템 간 간격을 일정하게 설정 */
-    gap: 25px; /* 요소 간 간격을 줄임 */
-    margin-top: 15px; /* 상단 여백 설정 */
-}
-
-.contact-form {
-    flex: 1; /* 폼을 플렉스 컨테이너의 1단위 만큼 차지 */
-    background-color: #fff; /* 폼의 배경색 설정 */
-    padding: 5px; /* 폼 내부 패딩 설정 */
-    border-radius: 8px; /* 폼의 모서리를 둥글게 설정 */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
-}
-
-.contact-form h2 {
-    color: #333; /* 폼 제목의 텍스트 색상 설정 */
-    font-size: 22px; /* 폼 제목의 폰트 크기 설정 */
-    margin-bottom:5px; /* 폼 제목의 하단 여백 설정 */
-}
-
-.contact-form p {
-    font-size: 14px; /* 폼 설명 텍스트의 폰트 크기 설정 */
-    line-height: 1.6; /* 폼 설명 텍스트의 줄 간격 설정 */
-    color: #666; /* 폼 설명 텍스트의 색상 설정 */
-}
-
-.contact-form label {
-    display: block; /* 라벨을 블록 요소로 설정 */
-    margin-top: 0px; /* 라벨 상단 여백 설정 */
-    font-weight: bold; /* 라벨 텍스트를 굵게 설정 */
-    font-size: 14px; /* 라벨 텍스트의 폰트 크기 설정 */
-}
-
-.contact-form input[type="text"], .contact-form input[type="email"], .contact-form input[type="tel"], .contact-form textarea {
-    width: 70%; /* 입력 필드의 너비를 100%로 설정 */
-    padding: 8px; /* 입력 필드 내부 패딩 설정 */
-    margin-top: 0px; /* 입력 필드 상단 여백 설정 */
-    border-radius: 4px; /* 입력 필드의 모서리를 둥글게 설정 */
-    border: 1px solid #ccc; /* 입력 필드의 외곽선 설정 */
-    box-sizing: border-box; /* 패딩과 테두리를 포함한 크기 설정 */
-}
-
-.contact-form input[type="submit"] {
-    background-color: #4CAF50; /* 제출 버튼의 배경색 설정 */
-    color: white; /* 제출 버튼의 텍스트 색상 설정 */
-    padding: 10px 15px; /* 제출 버튼의 패딩 설정 */
-    border: none; /* 제출 버튼의 외곽선 제거 */
-    border-radius: 5px; /* 제출 버튼의 모서리를 둥글게 설정 */
-    cursor: pointer; /* 마우스 커서 모양 변경 */
-    margin-top: 5px; /* 제출 버튼 상단 여백 설정 */
-    width: 50%; /* 제출 버튼의 너비를 100%로 설정 */
-}
-
-.contact-form input[type="submit"]:hover {
-    background-color: #45a049; /* 호버 시 버튼 배경색 변경 */
-}
-
-.contact-map {
-    flex: 1; /* 지도가 플렉스 컨테이너의 1단위 만큼 차지 */
-    padding-left: 15px; /* 지도와 폼 간 간격 설정 */
-}
-
-.contact-map iframe {
-    width: 100%; /* 지도 너비를 100%로 설정 */
-    border-radius: 8px; /* 지도의 모서리를 둥글게 설정 */
-    margin-bottom: 15px; /* 지도 하단 여백 설정 */
-    border: 1px solid #ddd; /* 지도 외곽선 설정 */
-    height: 300px; /* 지도의 높이를 300px로 설정 */
-}
-
-.contact-info {
-    background-color: #f4f4f4; /* 연락처 정보 박스의 배경색 설정 */
-    padding: 15px; /* 박스 내부 패딩 설정 */
-    border-radius: 8px; /* 박스 모서리를 둥글게 설정 */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 박스에 그림자 효과 추가 */
-}
-
-.contact-info h3 {
-    margin-top: 0; /* 제목 상단 여백 제거 */
-    color: #333; /* 제목 텍스트의 색상 설정 */
-    font-size: 20px; /* 제목 폰트 크기 설정 */
-}
-
-.contact-info p {
-    margin: 10px 0; /* 텍스트 상하단 여백 설정 */
-    font-size: 14px; /* 텍스트 폰트 크기 설정 */
-    color: #666; /* 텍스트 색상 설정 */
-}
-/* 연락처 페이지 스타일 끝 */
-
-#about, #services, #contact {
-    background-color: #fff; /* 기본 배경색을 밝게 설정 */
-}
-
-h2 {
-    color: #ffdd57; /* 섹션 제목 색상 설정 */
-    text-align: center; /* 섹션 제목을 중앙 정렬 */
-    font-size: 32px; /* 섹션 제목의 폰트 크기 설정 */
-    margin-bottom: 20px; /* 섹션 제목 하단 여백 설정 */
-}
-
-ul {
-    list-style-type: none; /* 리스트의 기본 불릿 제거 */
-    padding: 0; /* 리스트의 기본 패딩 제거 */
-}
-
-ul li {
-    font-size: 20px; /* 리스트 항목의 폰트 크기 설정 */
-    padding: 10px 0; /* 리스트 항목의 상하 패딩 설정 */
-    text-align: center; /* 리스트 항목을 중앙 정렬 */
-}
-
-form {
-    margin-top: 20px; /* 폼의 상단 여백 설정 */
-}
-
-form label {
-    display: block; /* 라벨을 블록 요소로 설정 */
-    margin-bottom: 5px; /* 라벨의 하단 여백 설정 */
-}
-
-form input[type="text"], form input[type="email"], form textarea {
-    width: 100%; /* 입력 필드의 너비를 100%로 설정 */
-    padding: 10px; /* 입력 필드 내부 패딩 설정 */
-    margin-bottom: 10px; /* 입력 필드의 하단 여백 설정 */
-    border: 1px solid #ccc; /* 입력 필드의 외곽선 설정 */
-    border-radius: 4px; /* 입력 필드의 모서리를 둥글게 설정 */
-}
-
-form input[type="submit"] {
-    background-color: #ffdd57; /* 제출 버튼의 배경색 설정 */
-    color: #002d26; /* 제출 버튼의 텍스트 색상 설정 */
-    padding: 10px 15px; /* 제출 버튼의 패딩 설정 */
-    border: none; /* 제출 버튼의 외곽선 제거 */
-    border-radius: 4px; /* 제출 버튼의 모서리를 둥글게 설정 */
-    cursor: pointer; /* 마우스 커서 모양 변경 */
-}
-
-form input[type="submit"]:hover {
-    background-color: #ffcc00; /* 호버 시 버튼 배경색 변경 */
-}
-
-footer {
-    text-align: center; /* 푸터를 중앙 정렬 */
-    padding: 20px; /* 푸터의 패딩 설정 */
-    background-color: #002d26; /* 푸터 배경색 설정 */
-    color: #fff; /* 푸터 텍스트 색상 설정 */
+    font-size: 30px; /* 폰트 크기 */
+    z-index: 2; /* 레이어 순서 */
 }
