@@ -1,3 +1,4 @@
+<html>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -11,49 +12,61 @@
     <!-- 공통 헤더 -->
     <header>
         <div class="container">
-            <h1>송도관세사 입니다.</h1>
+            <h1>송도관세사</h1>
             <nav>
                 <ul>
                     <li><a href="index.html#home">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="Services.html">Services</a></li>
-                    <li><a href="Contact.html" class="contact-button">CONTACT</a></li>
+                    <li><a href="Contact.html" class="contact-button">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="contact">
-        <div class="container contact-container">
-            <div class="contact-form">
-                <h2>전문가와 상담해보세요</h2>
-                <p>무역과 관련한 문제를 해결하기 위한 상담을 원하시면 연락 주세요.</p>
-                <form>
-                    <label for="name">성명 *</label><br>
-                    <input type="text" id="name" name="name" required><br>
+    <!-- Contact 섹션 -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/xblrywyz" method="POST">
+                        <h2>전문가와 상담해보세요</h2>
+                        <label for="name">성명 *</label>
+                        <input type="text" id="name" name="name" required placeholder="홍길동">
 
-                    <label for="email">Email 주소 *</label><br>
-                    <input type="email" id="email" name="email" required><br>
+                        <label for="email">Email 주소 *</label>
+                        <input type="email" id="email" name="email" required placeholder="email@website.com">
 
-                    <label for="phone">휴대폰 번호 *</label><br>
-                    <input type="tel" id="phone" name="phone" required><br>
+                        <label for="phone">휴대폰 번호 *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="010-555-5555">
 
-                    <label for="message">남기실 말씀</label><br>
-                    <textarea id="message" name="message"></textarea><br>
+                        <label for="message">남기실 말씀</label>
+                        <textarea id="message" name="message" placeholder="간략하게 현재의 문제점을 보내주세요. 최대한 빠른 시일내에 연락드리겠습니다."></textarea>
 
-                    <label><input type="checkbox" required> 본인은 상기 자료가 이사이트에 저장을 허용합니다. *</label><br>
+                        <label><input type="checkbox" required> 본인은 상기 자료가 이 사이트에 저장을 허용합니다. *</label><br>
 
-                    <input type="submit" value="제출하기">
-                </form>
-            </div>
-            <div class="contact-map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.891702763208!2d126.6114532156323!3d37.46770803606996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b797f0e90e611%3A0x4966c7d2b1c2f8cd!2z7J247ZSM7JuQ7Iuc64-ZIO2DgOq4sOq1rCDrjIDrsoTsmqntmZjsp4AgNzXsnZjspp3soJzsoIQ!5e0!3m2!1sko!2skr!4v1692031658488!5m2!1sko!2skr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <input type="submit" value="제출하기">
+                    </form>
+                </div>
+
                 <div class="contact-info">
-                    <h3>문의하기</h3>
+                    <h3>우리의 연락처 정보</h3>
                     <p><strong>전화:</strong> 010-9198-8194</p>
                     <p><strong>Email:</strong> holyspirit.cha@gmail.com</p>
-                    <h3>Location</h3>
-                    <p>중구 신흥동3가 75, 인천광역시</p>
+                    <p><strong>위치:</strong> 중구 신흥동3가 75, 인천광역시</p>
+                    
+                    <!-- 구글 지도 삽입 -->
+                    <div class="contact-map">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!4m6!3m5!1s0x357b78035ce9d807:0x95620eff644aff3e!8m2!3d37.4319618!4d126.6190623!16s%2Fg%2F1wzt0939" 
+                            width="600" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -64,5 +77,6 @@
             <p>&copy; 2024 송도관세사. 모든 권리 보유.</p>
         </div>
     </footer>
+
 </body>
 </html>
