@@ -1,186 +1,196 @@
-/* 전체 페이지 스타일 */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
     background-color: #f4f4f4;
-    color: #333;
+    color: #333; /* 텍스트 컬러를 진한 회색으로 변경 */
 }
 
-/* 헤더 스타일 */
 header {
     background-color: #002d26;
-    padding: 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+    padding: 20px 0;
 }
 
-/* 컨테이너 스타일 */
 .container {
-    width: 90%;
-    max-width: 1200px;
+    width: 80%;
     margin: 0 auto;
 }
 
-/* 헤더 제목 스타일 */
 header h1 {
-    color: #fff;
+    margin: 0;
     text-align: left;
     font-size: 24px;
-    margin: 0;
 }
 
-/* 네비게이션 바 스타일 */
 nav ul {
-    list-style: none;
+    list-style-type: none;
     margin: 0;
     padding: 0;
     text-align: right;
 }
 
 nav ul li {
-    display: inline-block;
-    margin-left: 20px;
+    display: inline;
+    margin: 0 15px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    padding: 10px 15px;
-    background-color: #004d40;
+}
+
+nav ul li .contact-button {
+    border: 2px solid #fff;
+    padding: 5px 10px;
     border-radius: 5px;
-    transition: background-color 0.3s;
 }
 
-nav ul li a:hover {
-    background-color: #00796b;
-}
-
-/* 연락처 섹션 스타일 */
-.contact-section {
-    padding: 100px 0;
-    margin-top: 60px;
-    background-color: #fff;
-}
-
-/* 연락처 섹션 제목 스타일 */
-.contact-section h2,
-.contact-info h3 {
-    text-align: center; /* 중앙 정렬 */
-    font-size: 36px; /* 폰트 크기 */
-    margin-bottom: 20px; /* 하단 여백 */
-    font-weight: bold; /* 텍스트 굵기 */
-}
-
-/* 연락처 섹션의 콘텐츠 레이아웃 스타일 */
-.contact-content {
+/* 홈 섹션 스타일 */
+#home {
+    background-image: url('homepage.png'); /* 이미지 경로를 정확히 지정하세요 */
+    background-color: #e0f7fa; /* 배경색을 밝게 수정 */
+    height: 100vh;
+    position: relative;
     display: flex;
-    justify-content: space-between;
-    align-items: stretch; /* 양쪽 섹션을 동일한 높이로 맞춤 */
-    flex-wrap: wrap;
-    gap: 20px; /* 요소 사이의 간격 조정 */
+    align-items: flex-start; /* 텍스트를 상단에 배치 */
+    justify-content: flex-start; /* 텍스트를 왼쪽에 배치 */
+    padding: 50px; /* 상단과 좌측 여백 추가 */
+    text-align: left; /* 텍스트 정렬을 왼쪽으로 설정 */
+    color: #fff; /* 텍스트 색상을 흰색으로 변경 */
 }
 
+#home .overlay {
+    display: none; /* 어두운 오버레이 제거 */
+}
 
+/* 홈 섹션 내 텍스트 스타일 */
+.home-text {
+    max-width: 600px; /* 텍스트 블록의 최대 너비를 설정 */
+}
 
+#home h2 {
+    font-size: 48px;
+    margin-bottom: 10px; /* 하단 여백 조정 */
+    z-index: 2;
+}
 
-/* 연락처 정보와 폼 섹션 스타일 */
-.contact-form, .contact-info {
+#home p {
+    font-size: 24px;
+    z-index: 2;
+}
+
+/* 연락처 페이지 스타일 시작 */
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.contact-form {
     flex: 1;
-    max-width: 48%; /* 양쪽 섹션의 너비를 동일하게 설정 */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-sizing: border-box; /* 박스 모델을 테두리 및 패딩 포함하여 계산 */
 }
 
-/* 폼 레이블 스타일 */
+.contact-map {
+    flex: 1;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
 .contact-form label {
-    margin-bottom: 5px; /* 레이블과 입력 필드 간격 */
-    font-weight: bold; /* 텍스트 굵기 */
-    font-size: 16px; /* 레이블 폰트 크기 */
-    color: #333; /* 레이블 색상 */
+    font-weight: bold;
+    margin-top: 10px;
 }
 
-/* 오른쪽 섹션(연락처 정보) 맞춤 */
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* 상하단을 맞추기 위해 사용 */
-    padding-top: 00px; /* 상단을 폼의 타이틀과 맞추기 위해 추가 */
-    padding-bottom: 100px; /* 하단을 폼의 제출 버튼과 맞추기 위해 추가 */
+.contact-form input[type="text"], .contact-form input[type="email"], .contact-form input[type="tel"], .contact-form textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-/* 연락처 정보 섹션 내의 각 항목 간격 조정 */
-.contact-info p {
-    margin-bottom: 0px; /* 요소 간의 하단 여백을 줄임 (기존 여백보다 작게 설정) */
-    line-height: 1; /* 텍스트 간의 간격을 조금 더 조밀하게 */
+.contact-form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
 }
 
-/* 입력 필드와 텍스트 영역 스타일 */
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form input[type="tel"],
-.contact-form textarea {
+.contact-form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.contact-map iframe {
+    border-radius: 5px;
+}
+/* 연락처 페이지 스타일 끝 */
+
+#about, #services, #contact {
+    background-color: #fff; /* 기본 배경색을 밝게 설정 */
+}
+
+h2 {
+    color: #ffdd57;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 20px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"], form input[type="email"], form textarea {
     width: 100%;
     padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc; /* 테두리 색상 */
-    border-radius: 4px; /* 모서리 둥글게 */
-    box-sizing: border-box;
-    font-size: 16px; /* 입력 필드 폰트 크기 */
-    color: #333; /* 입력 텍스트 색상 */
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-/* 텍스트 영역(메시지 입력란) 높이 조정 */
-.contact-form textarea {
-    height: 150px; /* 높이 설정 */
+form input[type="submit"] {
+    background-color: #ffdd57;
+    color: #002d26;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-/* 제출 버튼 스타일 */
-.contact-form input[type="submit"] {
-    background-color: #4CAF50; /* 배경색 */
-    color: white; /* 텍스트 색상 */
-    padding: 10px;
-    border: none; /* 테두리 제거 */
-    border-radius: 5px; /* 모서리 둥글게 */
-    cursor: pointer; /* 마우스 커서 포인터 모양 */
-    font-size: 16px; /* 버튼 폰트 크기 */
-    font-weight: bold; /* 버튼 텍스트 굵기 */
-    margin: 10px left; /* 위아래로 10px 여백 설정, 자동으로 좌우 중앙 정렬 */
-    display: block; /* 블록 요소로 변경하여 중앙 정렬 가능하게 함 */
+form input[type="submit"]:hover {
+    background-color: #ffcc00;
 }
 
-
-/* 제출 버튼 호버 시 배경색 변경 */
-.contact-form input[type="submit"]:hover {
-    background-color: #45a049; /* 배경색 변경 */
-}
-
-
-/* 구글 지도 크기 축소 및 왼쪽 정렬 */
-.contact-map {
-    flex-grow: 0; /* flex-grow를 0으로 설정하여 크기 조정 */
-    border: 1px solid #ccc; /* 선택 사항: 지도 영역에 테두리 추가 */
-    height: auto; /* 필요에 따라 자동 조정 */
-    width: 80%; /* 지도의 너비를 80%로 축소 */
-    box-sizing: border-box;
-    transform: scale(0.8); /* 전체 크기를 80%로 축소 */
-    transform-origin: left center; /* 왼쪽 중심을 기준으로 축소 */
-    float: left; /* 지도를 왼쪽으로 정렬 */
-    margin-right: 20px; /* 오른쪽에 약간의 여백을 추가 */
-}
-
-
-/* 푸터 스타일 */
 footer {
-    text-align: center; /* 중앙 정렬 */
-    padding: 20px; /* 패딩 */
-    background-color: #002d26; /* 배경색 설정 */
-    color: #fff; /* 텍스트 색상 */
-    margin-top: 40px; /* 상단 여백 */
+    text-align: center;
+    padding: 20px;
+    background-color: #002d26;
+    color: #fff;
 }
+
