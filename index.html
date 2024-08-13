@@ -4,7 +4,244 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>송도관세사</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #002d26;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            margin: 0;
+            text-align: left;
+            font-size: 24px;
+            color: #fff;
+        }
+
+        nav ul {
+            list-style-type: none; /* 네비게이션 리스트의 기본 불릿 제거 */
+            margin: 0; /* 네비게이션 리스트의 기본 여백 제거 */
+            padding: 0; /* 네비게이션 리스트의 기본 패딩 제거 */
+            text-align: right; /* 네비게이션 리스트를 오른쪽 정렬 */
+            margin-right: -100px; /* 네비게이션 바 위치 조정 */
+        }
+
+        nav ul li {
+            display: inline; /* 네비게이션 리스트 항목을 가로로 배치 */
+            margin: 0 15px; /* 리스트 항목 간 간격 설정 */
+        }
+
+        nav ul li a {
+            color: #fff; /* 네비게이션 링크 텍스트 색상 설정 */
+            text-decoration: none; /* 링크의 밑줄 제거 */
+            font-weight: bold; /* 링크 텍스트의 굵기 설정 */
+        }
+
+        nav ul li .contact-button {
+            border: 0px solid #fff; /* 링크의 외곽선 설정 */
+            padding: 5px 10px; /* 링크의 패딩 설정 */
+            border-radius: 5px; /* 외곽선의 모서리를 둥글게 설정 */
+        }
+
+        /* 홈 섹션 스타일 */
+        #home {
+            background-image: url('http://songdocustoms.github.io/homepage.png');
+            background-color: #e0f7fa;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 50px;
+            text-align: left;
+            color: #fff;
+        }
+
+        #home .overlay {
+            display: none;
+        }
+
+        .home-text {
+            max-width: 600px;
+        }
+
+        #home h2 {
+            justify-content: flex-start;
+            margin-left: 10px;
+            font-size: 48px;
+            text-align: left;
+            margin-bottom: 10px;
+            z-index: 2;
+            color: #fff;
+        }
+
+        #home p {
+            font-size: 22px;
+            z-index: 2;
+        }
+
+        /* 서비스 섹션 스타일 */
+        #services {
+            padding: 100px 0;
+            margin-top: 60px;
+            background-color: #fff;
+        }
+
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .service-card {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 300px;
+            box-sizing: border-box;
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .service-card p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        /* 연락처 섹션 스타일 */
+        .contact-section {
+            padding: 100px 0;
+            margin-top: 60px;
+            background-color: #fff;
+        }
+
+        .contact-section h2,
+        .contact-info h3 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .contact-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .contact-form, .contact-info {
+            flex: 1;
+            max-width: 48%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+
+        .contact-form label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-top: 0;
+            padding-bottom: 100px;
+        }
+
+        .contact-info p {
+            margin-bottom: 0px;
+            line-height: 1;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form input[type="tel"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+        }
+
+        .contact-form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 10px left;
+            display: block;
+        }
+
+        .contact-form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .contact-map {
+            flex-grow: 0;
+            border: 1px solid #ccc;
+            height: auto;
+            width: 80%;
+            box-sizing: border-box;
+            transform: scale(0.8);
+            transform-origin: left center;
+            float: left;
+            margin-right: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #002d26;
+            color: #fff;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
 
@@ -14,79 +251,139 @@
             <h1>송도관세사 입니다.</h1>
             <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact" class="contact-button">CONTACT</a></li>
+                    <li><a href="#home">홈으로</a></li>
+                    <li><a href="#about">우리는</a></li>
+                    <li><a href="#services">하는일</a></li>
+                    <li><a href="#contact" class="contact-button">연락처</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="home">
-        <div class="overlay"></div>
-        <div class="container">
-            <!-- 수정된 부분 시작 -->
-            <div class="home-text">
-                <h2>송도관세사</h2>
-                <p>귀사의 무역관련 문제에 대한 완벽한 솔루션을 제공합니다.</p>
-            </div>
-            <!-- 수정된 부분 끝 -->
+    <!-- 홈 섹션 -->
+<section id="home" style="position: fixed; top: 35px; left: 0px; width: calc(100% - 23px);">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="home-text">
+            <h2>송도관세사</h2>
+            <p>귀사의 무역관련 문제에 대한 완벽한 솔루션을 제공합니다.</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="about">
-        <div class="container">
-            <h2>송도관세사를 소개합니다</h2>
-            <p>송도관세사 대표 차상두는 다년간의 경험과 전문성을 바탕으로, 무역 및 통관 관련 문제를 효과적으로 해결하는 관세사입니다.</p>
-            <p>저희는 고객의 요구를 깊이 이해하고, 최적의 해결책을 제시하며, 정확하고 신속한 서비스를 제공합니다.</p>
-        </div>
-    </section>
 
+    <!-- 서비스 섹션 -->
     <section id="services">
-        <div class="container">
-            <h2>송도관세사의 전문 서비스</h2>
-            <ul>
-                <li>세관 심사 및 불복 대행 관세심사</li>
-                <li>통관적법성</li>
-                <li>수출입 통관대행</li>
-                <li>관세 및 통관특례</li>
-                <li>관세환급 및 외환거래법</li>
-                <li>해외직구 통관컨설팅</li>
-            </ul>
+        <div class="container services-container">
+            <div class="service-card">
+                <h3>세관 심사 및 불복 대행</h3>
+                <p>관세심사<br>
+                기업심사, 법인심사. 기획심사, 건별 심사, 환급심사 등 모든 심사대행<br>
+                관세조사<br>
+                관세조사, 원산지검증, 각종 세관 검사 조력 및 대응서비스<br>
+                불복 쟁송<br>
+                과세전 적부심사, 이의신청, 조세심판, 행정소송, 관세관련 소송 조력 (분야별 협력 변호사 연계)</p>
+            </div>
+
+            <div class="service-card">
+                <h3>통관 적법성</h3>
+                <p>품목분류(HS code) 및 관세평가<br>
+                사전심사 신청, 품목분류 컨설팅, 국제분쟁 대응, 과세가격, 이전가격(ACVA), 외국인투자 기업 평가<br>
+                수출입 요건 원산지, 지적재산권<br>
+                전기·전파 인증, 식품 수입 및 검역, 원산지 표시 및 증명, 상표권 보호 및 병행수입 대응<br>
+                관세 감면<br>
+                FTA 등 특혜 관세 적용, 관부가세 감면/면세, 관세분할납부/유예 등</p>
+            </div>
+
+            <div class="service-card">
+                <h3>수출입 통관 대행</h3>
+                <p>통합관리서비스<br>
+                신속 · 정확한 맞춤형 통관, 적정 관세, 통관 적법성, 통관 물류<br>
+                수출입 무역 종합대행<br>
+                수출입기업 및 개인기업을 위한 무역, 통관, 물류 종합대행<br>
+                관세관련 통합 연계 서비스 제공<br>
+                관세뿐만 아니라 관련된 종합세무 서비스 제공을 위한 변호사, 회계사, 세무사 연계 협력 서비스</p>
+            </div>
+
+            <div class="service-card">
+                <h3>관세 및 통관 특례</h3>
+                <p>FTA 컨설팅<br>
+                원산지증명서, 인증수출자 지정, 원산지 검증/조사, 원산지 관리<br>
+                FTA 비즈니스 컨설팅<br>
+                최적의 수출입 무역거래 방식 제공<br>
+                AEO 컨설팅<br>
+                통관 특혜, 관세납부 혜택, 물류 절감<br>
+                수출국 관세특혜<br>
+                FTA, GSP, APTA 원산지증명서</p>
+            </div>
+
+            <div class="service-card">
+                <h3>관세환급 및 외환거래법</h3>
+                <p>개별환급 대행<br>
+                소요량산정, 수출입 신고서 잔량 관리 등 개별환급 종합관리 서비스<br>
+                기타 환급 대행<br>
+                간이정액환급, 과오납 환급, FTA사후환급, 원상태 환급<br>
+                수정, 보정, 경정 등<br>
+                외국환거래법<br>
+                수출입 대금 외환신고 적법성, 제3자 지급, 상계, 중계무역, 외환지급/수령 등</p>
+            </div>
+
+            <div class="service-card">
+                <h3>해외 직구 통관 컨설팅</h3>
+                <p>국제우편물 해외직구 통관<br>
+                우편물 등 해외 직구물품 통관<br>
+                해외 통관 컨설팅<br>
+                수출컨설팅, 수출국 관세율, 통관요건, 통관 절차 등 종합 컨설팅<br>
+                국제교류 통관<br>
+                전시물품(ATA 까르네), 문화예술관련 물품 수출입</p>
+            </div>
         </div>
     </section>
 
-    <section id="contact">
-        <div class="container contact-container">
-            <div class="contact-form">
-                <h2>전문가와 상담해보세요</h2>
-                <p>무역과 관련한 문제를 해결하기 위한 상담을 원하시면 연락 주세요.</p>
-                <form>
-                    <label for="name">성명 *</label><br>
-                    <input type="text" id="name" name="name" required><br>
+    <!-- Contact 섹션 -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/xblrywyz" method="POST">
+                        <h2>전문가와 상담해보세요</h2>
+                        <label for="name">성명 *</label>
+                        <input type="text" id="name" name="name" required placeholder="홍길동">
 
-                    <label for="email">Email 주소 *</label><br>
-                    <input type="email" id="email" name="email" required><br>
+                        <label for="email">Email 주소 *</label>
+                        <input type="email" id="email" name="email" required placeholder="email@website.com">
 
-                    <label for="phone">휴대폰 번호 *</label><br>
-                    <input type="tel" id="phone" name="phone" required><br>
+                        <label for="phone">휴대폰 번호 *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="010-555-5555">
 
-                    <label for="message">남기실 말씀</label><br>
-                    <textarea id="message" name="message"></textarea><br>
+                        <label for="message">남기실 말씀</label>
+                        <textarea id="message" name="message" placeholder="간략하게 현재의 문제점을 보내주세요. 최대한 빠른 시일내에 연락드리겠습니다."></textarea>
 
-                    <label><input type="checkbox" required> 본인은 상기 자료가 이사이트에 저장을 허용합니다. *</label><br>
+                        <label><input type="checkbox" required> 본인은 상기 자료가 이 사이트에 저장을 허용합니다. *</label><br>
 
-                    <input type="submit" value="제출하기">
-                </form>
-            </div>
-            <div class="contact-map">
-                <h3>문의하기</h3>
-                <p>전화: 010-9198-8194</p>
-                <p>Email: holyspirit.cha@gmail.com</p>
-                <h3>Location</h3>
-                <p>중구 신흥동3가 75, 인천광역시</p>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.891702763208!2d126.6114532156323!3d37.46770803606996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b797f0e90e611%3A0x4966c7d2b1c2f8cd!2z7J247ZSM7JuQ7Iuc64-ZIO2DgOq4sOq1rCDrjIDrsoTsmqntmZjsp4AgNzXsnZjspp3soJzsoIQ!5e0!3m2!1sko!2skr!4v1692031658488!5m2!1sko!2skr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <input type="submit" value="제출하기">
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <h3>우리의 연락처 정보</h3>
+                    <p><strong>전화:</strong> 010-9198-8194</p>
+                    <p><strong>Email:</strong> holyspirit.cha@gmail.com</p>
+                    <p><strong>위치:</strong> 중구 신흥동3가 75, 인천광역시</p>
+                    
+                    <!-- 구글 지도 삽입 -->
+                    <div class="contact-map">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!4m6!3m5!1s0x357b78035ce9d807:0x95620eff644aff3e!8m2!3d37.4319618!4d126.6190623!16s%2Fg%2F1wzt0939" 
+                            width="600" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -96,5 +393,7 @@
             <p>&copy; 2024 송도관세사. 모든 권리 보유.</p>
         </div>
     </footer>
+
 </body>
 </html>
+
